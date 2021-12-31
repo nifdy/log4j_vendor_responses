@@ -3,7 +3,7 @@ name: Daily scraper of Log4J Vendor Status
 on:
   workflow_dispatch:
   schedule:
-    - cron: '27 19 * * *'
+    - cron: '27 22 * * *'
 
 jobs:
   scheduled:
