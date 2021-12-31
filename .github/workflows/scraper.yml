@@ -1,0 +1,31 @@
+name: Daily scraper of Log4J Vendor Status
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '27 19 * * *'
+
+jobs:
+  scheduled:
+    runs-on: macOS-latest
+
+    steps:
+    - name: Checkout repo
+      uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
+
+    - name: Setup R
+      uses: r-lib/actions/setup-r@v1
+
+    - name: Process CISA Log4J Vendor
+      run: R --silent --no-echo --file=log4j_vendor_response.R
+
+    - name: Commit and push if it changed
+      run: |-
+        git config user.name "Automated"
+        git config user.email "actions@users.noreply.github.com"
+        git add -A
+        timestamp=$(date -u)
+        git commit -m "Update data: ${timestamp}" || exit 0
+        git push
