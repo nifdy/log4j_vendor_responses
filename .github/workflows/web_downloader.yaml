@@ -1,6 +1,7 @@
 on:
+  workflow_dispatch:
   schedule:
-    - cron: "0 * * * *"
+    - cron: '27 22 * * *'
 
 jobs:
   generate-data:
