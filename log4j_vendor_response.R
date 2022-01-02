@@ -15,7 +15,7 @@ library(readr, include.only = c("write_csv"))
 today <- as.character(Sys.Date())
 
 output_file <- path.expand(sprintf("docs/%s.csv", today))
-latest_file <- path.expand("docs/latest.csv")
+latest_file <- path.expand("docs/cisa_vendor_responses.csv")
 
 db_url <- "https://github.com/cisagov/log4j-affected-db/blob/develop/SOFTWARE-LIST.md"
 
@@ -33,5 +33,9 @@ log4jdb <- tab %>% tibble::add_column(links_df) %>%
   select("Vendor",  "Product",  "Version(s)",  "Status",  "Update Available", "value",  "Notes",  "Other References",  "Last Updated") %>%
   rename("Vendor Link" = value)
 
-log4jdb %>% write_csv(output_file)
+# write to latest
 log4jdb %>% write_csv(latest_file)
+
+log4jdb %>% write_csv(output_file)
+
+
