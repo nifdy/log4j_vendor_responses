@@ -14,11 +14,9 @@ scheduled:
   - uses: r-lib/actions/setup-r-dependencies@v2
   with:
     cache-version: 2
-    extra-packages: |<
-      any::tidyverse
-      any::rvest
-  needs: |
-    website
-    coverage
+    extra-packages: any::tidyverse, any::rvest
+    needs: |
+      website
+      coverage
   - name: Process CISA Log4J Vendor
       run: R --silent --no-echo --file=log4j_vendor_response.R
