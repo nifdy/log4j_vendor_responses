@@ -4,7 +4,6 @@ on:
   - cron: '27 22 * * *'
 
 name: CISA Log4J
-
   scheduled:
     runs-on: ubuntu-latest
   
