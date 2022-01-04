@@ -34,8 +34,8 @@ log4jdb <- tab %>% tibble::add_column(links_df) %>%
   rename("Vendor Link" = value)
 
 # write to latest
-log4jdb %>% write_csv(latest_file)
+log4jdb %>% write_csv(latest_file, append = FALSE )
 
-log4jdb %>% write_csv(output_file)
+log4jdb %>% write_csv(output_file, append = FALSE )
 
 
