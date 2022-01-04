@@ -8,7 +8,7 @@ name: CISA Log4J
 jobs:
   render:
     name: Scrape Executive Orders
-    runs-on: macOS-latest
+    runs-on: windows-latest
     steps:
       - uses: actions/checkout@v2
       - uses: r-lib/actions/setup-r@v1
@@ -19,5 +19,5 @@ jobs:
       - name: Commit results
         run: |
           git add -A
-          git commit -m 'New Executive Order signed - data updated!' || echo "No changes to commit"
+          git commit -m 'CISA Information Downloaded - data updated!' || echo "No changes to commit"
           git push origin || echo "No changes to commit"
