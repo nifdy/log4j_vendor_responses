@@ -15,7 +15,7 @@ jobs:
       - name: Install dependencies
         run: Rscript -e "install.packages(c('rvest','dplyr','tibble','magrittr','readr'))"
       - name: Scrape the data
-        run: Rscript "log4j_vendor_response.R"
+        run: Rscript scraper.R
       - name: Commit results
         run: |
           git add -A
