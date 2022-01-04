@@ -19,5 +19,5 @@ jobs:
       - name: Commit results
         run: |
           git add -A
-          git commit -m 'CISA Downloaded - data updated!' || echo "No changes to commit"
+          git commit -m 'CISA Information Downloaded - data updated!' || echo "No changes to commit"
           git push origin || echo "No changes to commit"
