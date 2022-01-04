@@ -1,9 +1,9 @@
 # install pkg deps
-install.packages(
-  pkgs = c("rvest", "magrittr", "tibble", "dplyr", "readr"),
-  # pkgs = c("rvest", "magrittr", "tibble", "tidyr", "dplyr"),
-  dependencies = c("Depends", "Imports", "LinkingTo")
-)
+# install.packages(
+#   pkgs = c("rvest", "magrittr", "tibble", "dplyr", "readr"),
+#   # pkgs = c("rvest", "magrittr", "tibble", "tidyr", "dplyr"),
+#   dependencies = c("Depends", "Imports", "LinkingTo")
+# )
 
 #load libraries
 library(rvest, include.only = c("read_html", "html_node", "html_nodes", "html_attr", "html_text", "html_table"))
