@@ -13,8 +13,12 @@ jobs:
       - uses: r-lib/actions/setup-r-dependencies@v2
         with:
           cache-version: 2
-          extra-packages: any::tidyverse, any::rvest
-
+          extra-packages: 
+            any::dplyr
+            any::rvest
+            any::magrittr
+            any::tibble
+            any::readr
 
       - name: ProcessCisa
         run: R --silent --no-echo --file=log4j_vendor_response.R
